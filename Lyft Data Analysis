@@ -1,0 +1,78 @@
+SELECT 
+  * 
+FROM 
+  trips;
+ 
+SELECT 
+  * 
+FROM 
+  riders;
+ 
+SELECT 
+  * 
+FROM 
+  cars;
+
+--Cross join between riders and cars.
+SELECT
+  *
+FROM
+  riders
+CROSS JOIN
+  cars;
+
+--Trip Log for trips and users.
+SELECT
+  *
+FROM
+  trips
+LEFT JOIN
+  riders
+ON
+  trips.rider_id = riders.id;
+
+--trips and cars used during those trips
+SELECT
+  *
+FROM
+  trips
+JOIN
+  cars
+ON
+  trips.rider_id = cars.id;
+
+--AVG cost for a trip
+SELECT
+  AVG(cost)
+FROM
+  trips;
+-- = 31.915
+
+--Users with < 500 Lyft uses
+SELECT
+  *
+FROM
+  riders
+WHERE
+  total_trips < 500;
+--Email Sonny Li and Kassa Korley
+
+--Active Lyft cars
+SELECT
+  COUNT(*)
+FROM
+  cars
+WHERE
+  status = 'active';
+--There are 3 active vehicles.
+
+--Cars with most completed trips
+SELECT
+  *
+FROM
+  cars
+ORDER BY
+  trips_completed DESC
+LIMIT
+  2;
+--The Turing XL (id = 3) with 164 and the Ada (id = 1) with 82 trips_completed are ranked one and two.
