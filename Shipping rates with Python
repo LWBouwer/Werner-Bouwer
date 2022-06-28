@@ -1,0 +1,45 @@
+# Ground Shipping Costs
+
+weight = 41.5
+ 
+if weight <= 2:
+  cost_ground = weight*1.50 + 20
+
+elif weight <= 6:
+  cost_ground = weight*3.00 + 20
+
+elif weight <= 10:
+  cost_ground = weight*4.00 + 20
+
+else:
+  cost_ground = weight*4.75 + 20
+
+print ('Cost of ground shipping: $',cost_ground) 
+
+# Premium Ground Shipping
+
+cost_ground_premium = 125.00
+print ('Cost of premium ground shipping: $',cost_ground_premium)
+# Drone Shipping Costs
+
+weight = 41.5
+
+if weight <= 2:
+  cost_drone = weight*4.5
+
+elif weight <= 6:
+  cost_drone = weight*9.00
+
+elif weight <= 10:
+  cost_drone = weight*12.00 
+
+else:
+  cost_drone = weight*14.25
+
+print ('Cost of drone shipping: $',cost_drone)
+
+# Which shipping method is the cheapest:
+
+print ('For 4.8 lbs the cheapest shipping method is ground shipping: $34.4')
+
+print ('For 41.5 lbs premium ground shipping will be the cheapest: $125')
